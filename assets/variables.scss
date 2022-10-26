@@ -1,0 +1,53 @@
+// Ref: https://github.com/nuxt-community/vuetify-module#customvariables
+//
+// The variables you want to modify
+// $font-size-root: 20px;
+
+/* 
+    primary(
+        #01080E 
+        #011627 
+        #011221
+    )
+
+    secondary (
+        #607B96
+        #3C9D93
+        #4D5BCE
+        #FFFFFF
+    )
+
+    accent (
+        #FEA55F
+        #43D9AD
+        #E99287
+        #C98BDF
+    )
+
+    lines (
+        #1E2D3D
+    )
+
+    gradients (
+        #4D5BCE
+        #43D9AD
+    )
+*/
+
+:root {
+    --primary: #01080E;
+}
+
+$material-dark: ( 'background': #011627 );
+
+.v-toolbar__content {
+    border-bottom: 1px solid #1E2D3D;
+}
+
+.v-footer {
+    border-top: 1px solid #1E2D3D !important;
+}
+
+p {
+    color: #607B96;
+}
