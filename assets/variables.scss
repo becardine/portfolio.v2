@@ -34,20 +34,43 @@
     )
 */
 
-:root {
-    --primary: #01080E;
-}
+$primary: #01080E; 
+$primary-2: #011627; 
+$primary-3: #011221;
+
+$secondary: #607B96;
+$secondary-2: #3C9D93;
+$secondary-3: #4D5BCE;
+$secondary-4: #FFFFFF;
+
+$text: #E5E9F0;
+
+$accent-1: #FEA55F;
+$accent-2: #43D9AD;
+$accent-3: #E99287;
+$accent-4: #C98BDF;
+
+$lines: #1E2D3D;
+
+$gradient-1: #4D5BCE;
+$gradient-2: #43D9AD;
 
 $material-dark: ( 'background': #011627 );
 
 .v-toolbar__content {
-    border-bottom: 1px solid #1E2D3D;
+    border-bottom: 1px solid $lines;
+    padding: 0;
 }
 
 .v-footer {
-    border-top: 1px solid #1E2D3D !important;
+    border-top: 1px solid $lines !important;
+    padding: 0;
 }
 
 p {
-    color: #607B96;
+    color: $secondary;
+}
+
+i {
+    font-size: 1.5rem;
 }
