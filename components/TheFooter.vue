@@ -23,4 +23,8 @@ export default {
 <style lang="sass" scoped>
 p
   margin: 0 
+
+.v-footer 
+    border-top: 1px solid $lines !important,
+    padding: 0,
 </style>

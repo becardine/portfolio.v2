@@ -3,36 +3,6 @@
 // The variables you want to modify
 // $font-size-root: 20px;
 
-/* 
-    primary(
-        #01080E 
-        #011627 
-        #011221
-    )
-
-    secondary (
-        #607B96
-        #3C9D93
-        #4D5BCE
-        #FFFFFF
-    )
-
-    accent (
-        #FEA55F
-        #43D9AD
-        #E99287
-        #C98BDF
-    )
-
-    lines (
-        #1E2D3D
-    )
-
-    gradients (
-        #4D5BCE
-        #43D9AD
-    )
-*/
 
 $primary: #01080E; 
 $primary-2: #011627; 
@@ -57,13 +27,10 @@ $gradient-2: #43D9AD;
 
 $material-dark: ( 'background': #011627 );
 
+$gradient-bg:  linear-gradient(to left, $gradient-1, $gradient-2);
+
 .v-toolbar__content {
     border-bottom: 1px solid $lines;
-    padding: 0;
-}
-
-.v-footer {
-    border-top: 1px solid $lines !important;
     padding: 0;
 }
 
@@ -73,4 +40,8 @@ p {
 
 i {
     font-size: 1.5rem;
+}
+
+.col {
+    padding: 0;
 }

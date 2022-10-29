@@ -1,7 +1,7 @@
 <template>
-  <v-container class="fill-height">
-    <v-row justify="center">
-      <v-col cols="8">
+  <v-container class="fill-height" justify="center">
+    <v-row justify="center" align="center">
+      <v-col :cols="$vuetify.breakpoint.mdAndUp ? 6 : 10">
         <h3 class="font-weight-light"> Hi. I am</h3>
         <h2 class="font-weight-light my-n4 ml-n1">becardine</h2>
         <h1 class="font-weight-medium mb-16">> Front-end developer</h1>
@@ -14,7 +14,9 @@
           >
         </p>
       </v-col>
-      <v-col cols="4"> Game </v-col>
+      <v-col cols="6" v-if="$vuetify.breakpoint.mdAndUp"> 
+        <Gamer />
+      </v-col>
     </v-row>
   </v-container>
 </template>
@@ -45,4 +47,10 @@ h1,
 
 .link
   color: $accent-3
+
+.row 
+  max-width: 1240px !important
+
+.container
+  justify-content: center
 </style>
