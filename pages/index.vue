@@ -1,30 +1,46 @@
 <template>
-  <v-container class="fill-height" justify="center">
-    <v-row justify="center" align="center">
-      <v-col :cols="$vuetify.breakpoint.mdAndUp ? 6 : 10">
-        <h3 class="font-weight-light"> Hi. I am</h3>
-        <h2 class="font-weight-light my-n4 ml-n1">becardine</h2>
-        <h1 class="font-weight-medium mb-16">> Front-end developer</h1>
-        <p v-if="$vuetify.breakpoint.mdAndUp">// complete the game to continue</p>
-        <p class="my-2">// {{ $vuetify.breakpoint.mdAndUp ? 'you can also see it on my Github page' : 'find my profile on Github:' }}</p>
-        <p>
-          <span class="const">const</span> <span class="git">githubLink</span> =
-          <a href="https://github.com/becardine/" target="_blank" class="link"
-            >“https://github.com/becardine/”</a
-          >
-        </p>
-      </v-col>
-      <v-col cols="6" v-if="$vuetify.breakpoint.mdAndUp"> 
-        <Gamer />
-      </v-col>
-    </v-row>
-  </v-container>
+  <v-app>
+    <v-app-bar app flat color="background" elevation="0">
+      <TheHeader v-if="$vuetify.breakpoint.mdAndUp" />
+      <TheHeaderMobile v-else />
+    </v-app-bar>
+    <v-container class="fill-height" justify="center">
+      <v-row justify="center" align="center">
+        <v-col :cols="$vuetify.breakpoint.mdAndUp ? 6 : 10">
+          <h3 class="font-weight-light">Hi. I am</h3>
+          <h2 class="font-weight-light my-n4 ml-n1">becardine</h2>
+          <h1 class="font-weight-medium mb-16">> Front-end developer</h1>
+          <p v-if="$vuetify.breakpoint.mdAndUp">
+            // complete the game to continue
+          </p>
+          <p class="my-2">
+            //
+            {{
+              $vuetify.breakpoint.mdAndUp
+                ? "you can also see it on my Github page"
+                : "find my profile on Github:"
+            }}
+          </p>
+          <p>
+            <span class="const">const</span>
+            <span class="git">githubLink</span> =
+            <a href="https://github.com/becardine/" target="_blank" class="link"
+              >“https://github.com/becardine/”</a
+            >
+          </p>
+        </v-col>
+        <v-col cols="6" v-if="$vuetify.breakpoint.mdAndUp">
+          <Gamer />
+        </v-col>
+      </v-row>
+    </v-container>
+    <TheFooter />
+  </v-app>
 </template>
 
 <script>
 export default {
   name: "IndexPage",
-  layout: "main",
 };
 </script>
 <style lang="sass" scoped>
@@ -48,7 +64,7 @@ h1,
 .link
   color: $accent-3
 
-.row 
+.row
   max-width: 1240px !important
 
 .container

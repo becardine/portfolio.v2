@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar app color="background" elevation="0">
+    <v-app-bar app flat color="background" elevation="0">
     <p class="name ml-2">becardine</p>
       <v-divider class="mx-4" vertical></v-divider>
       <nuxt-link to="/" class="text-decoration-none"
@@ -23,7 +23,7 @@
           _contact-me
         </p></nuxt-link
       >
-  </v-app-bar>
+    </v-app-bar>
 </template>
 <script>
 export default {

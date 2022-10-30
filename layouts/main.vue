@@ -1,7 +1,6 @@
 <template>
   <v-app dark>
-    <TheHeader v-if="$vuetify.breakpoint.mdAndUp" />
-    <TheHeaderMobile v-if="$vuetify.breakpoint.smAndDown" />
+    <TheHeader />
     <v-main>
       <Nuxt />
     </v-main>

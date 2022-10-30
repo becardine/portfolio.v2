@@ -1,5 +1,5 @@
 <template lang="">
-  <v-footer color="transparent" elevation="0" class="p-0">
+  <v-footer app color="transparent" elevation="0" class="p-0">
     <p class="name ml-2">find me in:</p>
     <v-divider class="mx-4" vertical></v-divider>
     <nuxt-link to="/" class="text-decoration-none"

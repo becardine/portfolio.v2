@@ -31,7 +31,7 @@ $gradient-bg:  linear-gradient(to left, $gradient-1, $gradient-2);
 
 .v-toolbar__content {
     border-bottom: 1px solid $lines;
-    padding: 0;
+    padding: 0 !important;
 }
 
 p {
