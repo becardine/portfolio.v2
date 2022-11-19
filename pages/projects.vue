@@ -1,6 +1,6 @@
 <template>
     <div>
-        i love mozin
+        parmera 
     </div>
 </template>
 <script>
