@@ -1,6 +1,6 @@
 <template>
     <div>
-        Project
+        i love mozin
     </div>
 </template>
 <script>
