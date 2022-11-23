@@ -13,13 +13,14 @@
 
     <v-spacer></v-spacer>
     <v-divider class="mx-4" vertical></v-divider>
-    <nuxt-link
-      to="/contact"
+    <a
+      href="https://github.com/becardine/"
+      target="_blank"
       class="text-decoration-none d-flex align-center mr-2"
     >
       <p class="mr-2" v-if="$vuetify.breakpoint.mdAndUp">@becardine</p>
       <p><i class="ri-github-fill"></i></p>
-    </nuxt-link>
+    </a>
   </v-footer>
 </template>
 <script>
@@ -32,4 +33,5 @@ p
 .v-footer
     border-top: 1px solid $lines !important,
     padding: 0,
+
 </style>

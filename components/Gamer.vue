@@ -77,8 +77,6 @@
                 :style="{
                   width: size + 'px',
                   height: size + 'px',
-                  background: '#ccc',
-                  border: '1px solid #eee',
                   position: 'absolute',
                   top: line * size + 'px',
                   left: column * size + 'px',
@@ -92,8 +90,7 @@
                 :style="{
                   width: size + 'px',
                   height: size + 'px',
-                  background: '#666',
-                  border: '1px solid #eee',
+                  background: '#43D9AD',
                   position: 'absolute',
                   top: block.y * size + 'px',
                   left: block.x * size + 'px',
@@ -105,8 +102,8 @@
               :style="{
                 width: size + 'px',
                 height: size + 'px',
-                background: 'red',
-                border: '1px solid #eee',
+                background: '#A7E7D4',
+                borderRadius: '50%',
                 position: 'absolute',
                 top: fruit.y * size + 'px',
                 left: fruit.x * size + 'px',
@@ -344,22 +341,22 @@
 export default {
   data() {
     return {
-      lines: 25,
-      columns: 15,
-      size: 15,
+      lines: 22,
+      columns: 22,
+      size: 10,
       snaker: null,
       time: 1000 / 5,
-      direction: "direction",
+      direction: "right",
       fruit: null,
     };
   },
   mounted() {
     this.reset();
     window.addEventListener("keydown", (event) => {
-      if (event.which == 38) this.direction = "up";
-      if (event.which == 40) this.direction = "down";
-      if (event.which == 37) this.direction = "left";
-      if (event.which == 39) this.direction = "right";
+      if (event.which == 38 && this.direction != 'down') this.direction = "up";
+      if (event.which == 40 && this.direction != 'up') this.direction = "down";
+      if (event.which == 37 && this.direction != 'right') this.direction = "left";
+      if (event.which == 39 && this.direction != 'left') this.direction = "right";
     });
 
     setInterval(() => {
@@ -373,18 +370,18 @@ export default {
         x = x - 1 < 1 ? this.columns : x - 1;
       }
       if (this.direction == "down") {
-        y = y + 1 > this.columns ? 1 : y + 1;
+        y = y + 1 > this.lines ? 1 : y + 1;
       }
       if (this.direction == "up") {
-        y = y - 1 < 1 ? this.columns : y - 1;
+        y = y - 1 < 1 ? this.lines : y - 1;
       }
 
-      for (block of this.snaker) {
+      /* for (block of this.snaker) {
         if (x == block.x && y == block.y) {
           this.reset();
           return;
         }
-      }
+      } */
 
       if (x == this.fruit.x && y == this.fruit.y) {
         this.newFruit();
@@ -408,6 +405,7 @@ export default {
         { x: 1, y: 1 },
       ];
       this.newFruit();
+      this.direction = "right";
     },
   },
 };

@@ -1,6 +1,6 @@
 <template>
     <div>
-        parmera 
+        in construction...
     </div>
 </template>
 <script>
