@@ -109,7 +109,12 @@
                 left: fruit.x * size + 'px',
               }"
             ></div>
-            <div class="startGame" role="button" v-if="!isGaming" @click="startGame">
+            <div
+              class="startGame"
+              role="button"
+              v-if="!isGaming"
+              @click="startGame"
+            >
               <svg
                 width="113"
                 height="39"
@@ -130,6 +135,74 @@
                   fill="#01080E"
                 />
               </svg>
+            </div>
+            <div class="gameOver" v-if="isGameOver">
+              <svg
+                width="239"
+                height="48"
+                viewBox="0 0 239 48"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g filter="url(#filter0_i_0_1)">
+                  <rect
+                    width="239"
+                    height="48"
+                    rx="8"
+                    fill="#011627"
+                    fill-opacity="0.84"
+                  />
+                </g>
+                <path
+                  d="M55.6189 32.3C54.2669 32.3 53.0989 31.984 52.1149 31.352C51.1389 30.712 50.3829 29.756 49.8469 28.484C49.3189 27.212 49.0549 25.624 49.0549 23.72C49.0549 22.296 49.2469 21.052 49.6309 19.988C50.0149 18.916 50.5349 18.024 51.1909 17.312C51.8549 16.6 52.6069 16.064 53.4469 15.704C54.2949 15.344 55.1789 15.164 56.0989 15.164C57.2029 15.164 58.1189 15.324 58.8469 15.644C59.5749 15.964 60.2629 16.424 60.9109 17.024L59.5189 18.464C59.0149 17.992 58.4909 17.648 57.9469 17.432C57.4109 17.208 56.8069 17.096 56.1349 17.096C55.5429 17.096 54.9749 17.212 54.4309 17.444C53.8869 17.676 53.3989 18.048 52.9669 18.56C52.5429 19.072 52.2029 19.752 51.9469 20.6C51.6989 21.44 51.5749 22.48 51.5749 23.72C51.5749 25.288 51.7309 26.564 52.0429 27.548C52.3629 28.524 52.8349 29.24 53.4589 29.696C54.0909 30.144 54.8669 30.368 55.7869 30.368C56.3309 30.368 56.8469 30.304 57.3349 30.176C57.8229 30.048 58.2949 29.86 58.7509 29.612V24.776H55.6909L55.4149 22.88H61.0909V30.824C60.3309 31.24 59.5189 31.592 58.6549 31.88C57.7989 32.16 56.7869 32.3 55.6189 32.3ZM72.7095 27.884H66.4455L65.1975 32H62.8095L68.1375 15.464H71.1375L76.4775 32H73.9575L72.7095 27.884ZM66.9975 25.976H72.1575L69.5895 17.384L66.9975 25.976ZM89.6081 15.464L90.5441 32H88.3121L87.8441 23.612C87.8201 23.02 87.8001 22.432 87.7841 21.848C87.7681 21.256 87.7561 20.692 87.7481 20.156C87.7481 19.62 87.7481 19.132 87.7481 18.692C87.7561 18.252 87.7641 17.888 87.7721 17.6L85.1321 29.06H82.9001L80.0681 17.6C80.0841 17.88 80.0961 18.248 80.1041 18.704C80.1201 19.16 80.1281 19.664 80.1281 20.216C80.1361 20.768 80.1361 21.336 80.1281 21.92C80.1201 22.504 80.1081 23.068 80.0921 23.612L79.6961 32H77.5121L78.4481 15.464H81.5321L84.0761 26.684L86.5001 15.464H89.6081ZM96.4868 17.336V22.652H102.559V24.536H96.4868V30.14H103.915V32H94.0988V15.464H103.735L103.459 17.336H96.4868ZM133.38 23.744C133.38 25.424 133.148 26.908 132.684 28.196C132.22 29.484 131.528 30.492 130.608 31.22C129.696 31.94 128.56 32.3 127.2 32.3C125.848 32.3 124.712 31.948 123.792 31.244C122.872 30.532 122.18 29.536 121.716 28.256C121.252 26.976 121.02 25.48 121.02 23.768C121.02 22.08 121.252 20.592 121.716 19.304C122.18 18.008 122.872 16.996 123.792 16.268C124.712 15.532 125.848 15.164 127.2 15.164C128.56 15.164 129.696 15.52 130.608 16.232C131.528 16.944 132.22 17.944 132.684 19.232C133.148 20.512 133.38 22.016 133.38 23.744ZM130.896 23.744C130.896 21.568 130.608 19.916 130.032 18.788C129.464 17.66 128.52 17.096 127.2 17.096C125.88 17.096 124.932 17.664 124.356 18.8C123.788 19.936 123.504 21.592 123.504 23.768C123.504 25.936 123.8 27.58 124.392 28.7C124.984 29.812 125.92 30.368 127.2 30.368C128.52 30.368 129.464 29.808 130.032 28.688C130.608 27.568 130.896 25.92 130.896 23.744ZM141.639 29.516L145.887 15.464H148.299L142.887 32H140.295L134.883 15.464H137.439L141.639 29.516ZM154.049 17.336V22.652H160.121V24.536H154.049V30.14H161.477V32H151.661V15.464H161.297L161.021 17.336H154.049ZM176.168 20.156C176.168 20.98 175.992 21.696 175.64 22.304C175.296 22.912 174.828 23.42 174.236 23.828C173.644 24.228 172.98 24.524 172.244 24.716L177.056 32H174.236L169.88 25.028H167.828V32H165.44V15.464H169.844C171.924 15.464 173.496 15.86 174.56 16.652C175.632 17.436 176.168 18.604 176.168 20.156ZM173.636 20.156C173.636 19.14 173.34 18.408 172.748 17.96C172.164 17.512 171.264 17.288 170.048 17.288H167.828V23.216H170.072C171.208 23.216 172.084 22.984 172.7 22.52C173.324 22.048 173.636 21.26 173.636 20.156ZM185.987 15.464L185.735 26.444H183.719L183.443 15.464H185.987ZM184.739 28.904C185.227 28.904 185.635 29.068 185.963 29.396C186.291 29.724 186.455 30.12 186.455 30.584C186.455 31.056 186.291 31.46 185.963 31.796C185.635 32.132 185.227 32.3 184.739 32.3C184.267 32.3 183.867 32.132 183.539 31.796C183.219 31.46 183.059 31.056 183.059 30.584C183.059 30.12 183.219 29.724 183.539 29.396C183.867 29.068 184.267 28.904 184.739 28.904Z"
+                  fill="#43D9AD"
+                />
+                <defs>
+                  <filter
+                    id="filter0_i_0_1"
+                    x="0"
+                    y="0"
+                    width="240"
+                    height="53"
+                    filterUnits="userSpaceOnUse"
+                    color-interpolation-filters="sRGB"
+                  >
+                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feBlend
+                      mode="normal"
+                      in="SourceGraphic"
+                      in2="BackgroundImageFix"
+                      result="shape"
+                    />
+                    <feColorMatrix
+                      in="SourceAlpha"
+                      type="matrix"
+                      values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                      result="hardAlpha"
+                    />
+                    <feOffset dx="1" dy="5" />
+                    <feGaussianBlur stdDeviation="5.5" />
+                    <feComposite
+                      in2="hardAlpha"
+                      operator="arithmetic"
+                      k2="-1"
+                      k3="1"
+                    />
+                    <feColorMatrix
+                      type="matrix"
+                      values="0 0 0 0 0.00607639 0 0 0 0 0.0691344 0 0 0 0 0.104167 0 0 0 0.71 0"
+                    />
+                    <feBlend
+                      mode="normal"
+                      in2="shape"
+                      result="effect1_innerShadow_0_1"
+                    />
+                  </filter>
+                </defs>
+              </svg>
+              <p class="text-center" role="button" @click="startGame">
+                start-again
+              </p>
             </div>
           </v-col>
           <v-col cols="5" class="controller">
@@ -349,6 +422,7 @@ export default {
       direction: "right",
       fruit: null,
       isGaming: false,
+      isGameOver: false,
     };
   },
   /* mounted() {
@@ -396,46 +470,51 @@ export default {
   methods: {
     startGame() {
       this.isGaming = true;
+      this.isGameOver = false;
       this.reset();
-    window.addEventListener("keydown", (event) => {
-      if (event.which == 38 && this.direction != 'down') this.direction = "up";
-      if (event.which == 40 && this.direction != 'up') this.direction = "down";
-      if (event.which == 37 && this.direction != 'right') this.direction = "left";
-      if (event.which == 39 && this.direction != 'left') this.direction = "right";
-    });
+      window.addEventListener("keydown", (event) => {
+        if (event.which == 38 && this.direction != "down")
+          this.direction = "up";
+        if (event.which == 40 && this.direction != "up")
+          this.direction = "down";
+        if (event.which == 37 && this.direction != "right")
+          this.direction = "left";
+        if (event.which == 39 && this.direction != "left")
+          this.direction = "right";
+      });
 
-    setInterval(() => {
-      let x = this.snaker[0].x;
-      let y = this.snaker[0].y;
+      setInterval(() => {
+        let x = this.snaker[0].x;
+        let y = this.snaker[0].y;
 
-      if (this.direction == "right") {
-        x = x + 1 > this.columns ? 1 : x + 1;
-      }
-      if (this.direction == "left") {
-        x = x - 1 < 1 ? this.columns : x - 1;
-      }
-      if (this.direction == "down") {
-        y = y + 1 > this.lines ? 1 : y + 1;
-      }
-      if (this.direction == "up") {
-        y = y - 1 < 1 ? this.lines : y - 1;
-      }
-
-      /* for (block of this.snaker) {
-        if (x == block.x && y == block.y) {
-          this.reset();
-          return;
+        if (this.direction == "right") {
+          x = x + 1 > this.columns ? 1 : x + 1;
         }
-      } */
+        if (this.direction == "left") {
+          x = x - 1 < 1 ? this.columns : x - 1;
+        }
+        if (this.direction == "down") {
+          y = y + 1 > this.lines ? 1 : y + 1;
+        }
+        if (this.direction == "up") {
+          y = y - 1 < 1 ? this.lines : y - 1;
+        }
 
-      if (x == this.fruit.x && y == this.fruit.y) {
-        this.newFruit();
-      } else {
-        this.snaker.pop();
-      }
+        for (const block of this.snaker) {
+          if (x == block.x && y == block.y) {
+            this.gameOver();
+            return;
+          }
+        }
 
-      this.snaker.unshift({ x, y });
-    }, this.time);
+        if (x == this.fruit.x && y == this.fruit.y) {
+          this.newFruit();
+        } else {
+          this.snaker.pop();
+        }
+
+        this.snaker.unshift({ x, y });
+      }, this.time);
     },
     newFruit() {
       let x = Math.floor(Math.random() * this.columns) + 1;
@@ -450,6 +529,9 @@ export default {
       ];
       this.newFruit();
       this.direction = "right";
+    },
+    gameOver() {
+      this.isGameOver = true;
     },
   },
 };
@@ -492,6 +574,14 @@ export default {
     position: absolute
     bottom: 29px
     left: 25%
+
+.gameOver
+    position: absolute
+    bottom: 29px
+
+.gameOver p
+  padding: 10px
+
 
 p
  font-size: 14px
