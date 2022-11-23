@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "@nuxtjs/google-fonts": "^3.0.0-1",
-    "@nuxtjs/vuetify": "^1.12.3"
+    "@nuxtjs/vuetify": "^1.12.3",
+    "nuxt-purgecss": "^2.0.0"
   }
 }

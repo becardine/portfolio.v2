@@ -70,6 +70,48 @@
       <v-card-text class="mt-1">
         <v-row dense>
           <v-col cols="7" class="game mr-5">
+            <template v-for="line in lines">
+              <div
+                v-for="column in columns"
+                :key="column.id"
+                :style="{
+                  width: size + 'px',
+                  height: size + 'px',
+                  background: '#ccc',
+                  border: '1px solid #eee',
+                  position: 'absolute',
+                  top: line * size + 'px',
+                  left: column * size + 'px',
+                }"
+              ></div>
+            </template>
+            <span v-if="snaker">
+              <div
+                v-for="block in snaker"
+                :key="block.id"
+                :style="{
+                  width: size + 'px',
+                  height: size + 'px',
+                  background: '#666',
+                  border: '1px solid #eee',
+                  position: 'absolute',
+                  top: block.y * size + 'px',
+                  left: block.x * size + 'px',
+                }"
+              ></div>
+            </span>
+            <div
+              v-if="fruit"
+              :style="{
+                width: size + 'px',
+                height: size + 'px',
+                background: 'red',
+                border: '1px solid #eee',
+                position: 'absolute',
+                top: fruit.y * size + 'px',
+                left: fruit.x * size + 'px',
+              }"
+            ></div>
             <div class="startGame" role="button">
               <svg
                 width="113"
@@ -299,7 +341,76 @@
   </v-container>
 </template>
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      lines: 25,
+      columns: 15,
+      size: 15,
+      snaker: null,
+      time: 1000 / 5,
+      direction: "direction",
+      fruit: null,
+    };
+  },
+  mounted() {
+    this.reset();
+    window.addEventListener("keydown", (event) => {
+      if (event.which == 38) this.direction = "up";
+      if (event.which == 40) this.direction = "down";
+      if (event.which == 37) this.direction = "left";
+      if (event.which == 39) this.direction = "right";
+    });
+
+    setInterval(() => {
+      let x = this.snaker[0].x;
+      let y = this.snaker[0].y;
+
+      if (this.direction == "right") {
+        x = x + 1 > this.columns ? 1 : x + 1;
+      }
+      if (this.direction == "left") {
+        x = x - 1 < 1 ? this.columns : x - 1;
+      }
+      if (this.direction == "down") {
+        y = y + 1 > this.columns ? 1 : y + 1;
+      }
+      if (this.direction == "up") {
+        y = y - 1 < 1 ? this.columns : y - 1;
+      }
+
+      for (block of this.snaker) {
+        if (x == block.x && y == block.y) {
+          this.reset();
+          return;
+        }
+      }
+
+      if (x == this.fruit.x && y == this.fruit.y) {
+        this.newFruit();
+      } else {
+        this.snaker.pop();
+      }
+
+      this.snaker.unshift({ x, y });
+    }, this.time);
+  },
+  methods: {
+    newFruit() {
+      let x = Math.floor(Math.random() * this.columns) + 1;
+      let y = Math.floor(Math.random() * this.lines) + 1;
+
+      this.fruit = { x, y };
+    },
+    reset() {
+      this.snaker = [
+        { x: 2, y: 1 },
+        { x: 1, y: 1 },
+      ];
+      this.newFruit();
+    },
+  },
+};
 </script>
 <style lang="sass" scoped>
 .v-card
@@ -319,6 +430,7 @@ export default {};
   border-radius: 8px
   height: 380px
   margin-top: -4px
+  position: relative
 
 .controller
   max-width: 181px
@@ -336,8 +448,8 @@ export default {};
 
 .startGame
     position: absolute
-    bottom: 59px
-    left: 97px
+    bottom: 29px
+    left: 25%
 
 p
  font-size: 14px
