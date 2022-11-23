@@ -1,6 +1,6 @@
 <template>
     <div>
-        Project
+        parmera 
     </div>
 </template>
 <script>
