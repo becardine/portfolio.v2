@@ -109,7 +109,7 @@
                 left: fruit.x * size + 'px',
               }"
             ></div>
-            <div class="startGame" role="button">
+            <div class="startGame" role="button" v-if="!isGaming" @click="startGame">
               <svg
                 width="113"
                 height="39"
@@ -341,17 +341,62 @@
 export default {
   data() {
     return {
-      lines: 22,
+      lines: 36,
       columns: 22,
       size: 10,
       snaker: null,
       time: 1000 / 5,
       direction: "right",
       fruit: null,
+      isGaming: false,
     };
   },
-  mounted() {
+  /* mounted() {
     this.reset();
+    window.addEventListener("keydown", (event) => {
+      if (event.which == 38 && this.direction != 'down') this.direction = "up";
+      if (event.which == 40 && this.direction != 'up') this.direction = "down";
+      if (event.which == 37 && this.direction != 'right') this.direction = "left";
+      if (event.which == 39 && this.direction != 'left') this.direction = "right";
+    });
+
+    setInterval(() => {
+      let x = this.snaker[0].x;
+      let y = this.snaker[0].y;
+
+      if (this.direction == "right") {
+        x = x + 1 > this.columns ? 1 : x + 1;
+      }
+      if (this.direction == "left") {
+        x = x - 1 < 1 ? this.columns : x - 1;
+      }
+      if (this.direction == "down") {
+        y = y + 1 > this.lines ? 1 : y + 1;
+      }
+      if (this.direction == "up") {
+        y = y - 1 < 1 ? this.lines : y - 1;
+      }
+
+      for (block of this.snaker) {
+        if (x == block.x && y == block.y) {
+          this.reset();
+          return;
+        }
+      }
+
+      if (x == this.fruit.x && y == this.fruit.y) {
+        this.newFruit();
+      } else {
+        this.snaker.pop();
+      }
+
+      this.snaker.unshift({ x, y });
+    }, this.time);
+  }, */
+  methods: {
+    startGame() {
+      this.isGaming = true;
+      this.reset();
     window.addEventListener("keydown", (event) => {
       if (event.which == 38 && this.direction != 'down') this.direction = "up";
       if (event.which == 40 && this.direction != 'up') this.direction = "down";
@@ -391,8 +436,7 @@ export default {
 
       this.snaker.unshift({ x, y });
     }, this.time);
-  },
-  methods: {
+    },
     newFruit() {
       let x = Math.floor(Math.random() * this.columns) + 1;
       let y = Math.floor(Math.random() * this.lines) + 1;
