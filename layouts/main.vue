@@ -2,11 +2,9 @@
   <v-app dark>
     <TheHeader v-if="$vuetify.breakpoint.mdAndUp" />
     <TheHeaderMobile v-else />
-    <v-main>
-      <v-container fluid>
-        <div class="cursor"></div>
-        <router-view></router-view>
-      </v-container>
+    <v-main class="overflow-hidden">
+      <div class="cursor"></div>
+      <router-view></router-view>
     </v-main>
     <TheFooter />
   </v-app>
