@@ -1,9 +1,4 @@
 <template>
-  <v-app>
-    <v-app-bar app flat color="background" elevation="0">
-      <TheHeader v-if="$vuetify.breakpoint.mdAndUp" />
-      <TheHeaderMobile v-else />
-    </v-app-bar>
     <v-container class="fill-height" justify="center">
       <v-row justify="center" align="center">
         <v-col :cols="$vuetify.breakpoint.mdAndUp ? 6 : 10">
@@ -24,8 +19,8 @@
           <p>
             <span class="const">const</span>
             <span class="git">githubLink</span> =
-            <a href="https://github.com/becardine/" target="_blank" class="link"
-              >“https://github.com/becardine/”</a
+            <a href="https://github.com/becardine/portfolio.v2/blob/main/components/Gamer.vue" target="_blank" class="link"
+              >“https://github.com/becardine/gamer”</a
             >
           </p>
         </v-col>
@@ -34,13 +29,12 @@
         </v-col>
       </v-row>
     </v-container>
-    <TheFooter />
-  </v-app>
 </template>
 
 <script>
 export default {
   name: "IndexPage",
+  layout: 'main',
 };
 </script>
 <style lang="sass" scoped>

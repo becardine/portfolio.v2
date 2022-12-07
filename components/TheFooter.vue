@@ -2,13 +2,19 @@
   <v-footer app color="transparent" elevation="0" class="p-0">
     <p class="name ml-2">find me in:</p>
     <v-divider class="mx-4" vertical></v-divider>
-    <nuxt-link to="/" class="text-decoration-none"
-      ><p class="ri-twitter-fill"></p
-    ></nuxt-link>
+    <a
+      href="https://linkedin.com/in/becardine/"
+      target="_blank"
+      class="text-decoration-none d-flex align-center"
+      ><p class="ri-linkedin-fill"></p
+    ></a>
     <v-divider class="mx-4" vertical></v-divider>
-    <nuxt-link to="/about" class="text-decoration-none"
-      ><p class="ri-facebook-fill"></p
-    ></nuxt-link>
+    <a
+      href="https://instagram.com/becardine/"
+      target="_blank"
+      class="text-decoration-none d-flex align-center"
+      ><p class="ri-instagram-fill"></p
+    ></a>
     <v-divider class="mx-4" vertical></v-divider>
 
     <v-spacer></v-spacer>
@@ -33,5 +39,4 @@ p
 .v-footer
     border-top: 1px solid $lines !important,
     padding: 0,
-
 </style>

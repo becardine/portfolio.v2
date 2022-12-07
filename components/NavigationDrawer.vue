@@ -1,5 +1,5 @@
 <template>
-    <v-row class="fill-height" no-gutters>
+    <v-row no-gutters>
       <v-navigation-drawer
         dark
         mini-variant
