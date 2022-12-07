@@ -6,7 +6,7 @@
           <h2 class="font-weight-light my-n4 ml-n1">becardine</h2>
           <h1 class="font-weight-medium mb-16">> Front-end developer</h1>
           <p v-if="$vuetify.breakpoint.mdAndUp">
-            // complete the game to continue
+            // complete the game
           </p>
           <p class="my-2">
             //
@@ -19,8 +19,11 @@
           <p>
             <span class="const">const</span>
             <span class="git">githubLink</span> =
-            <a href="https://github.com/becardine/portfolio.v2/blob/main/components/Gamer.vue" target="_blank" class="link"
+            <a v-if="$vuetify.breakpoint.mdAndUp" href="https://github.com/becardine/portfolio.v2/blob/main/components/Gamer.vue" target="_blank" class="link"
               >“https://github.com/becardine/gamer”</a
+            >
+            <a v-else href="https://github.com/becardine/" target="_blank" class="link"
+              >“https://github.com/becardine/”</a
             >
           </p>
         </v-col>
