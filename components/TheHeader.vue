@@ -7,10 +7,10 @@
     <nuxt-link :to="{ name: 'index' }" class="text-decoration-none"
       ><p :class="{ isActive: $route.name === 'index' }">_hello</p></nuxt-link
     >
-    <v-divider class="mx-4" vertical></v-divider>
+    <!-- <v-divider class="mx-4" vertical></v-divider>
     <nuxt-link :to="{ name: 'about' }" class="text-decoration-none"
       ><p :class="{ isActive: $route.name === 'about' }">_about</p></nuxt-link
-    >
+    > -->
     <v-divider class="mx-4" vertical></v-divider>
     <nuxt-link :to="{ name: 'projects' }" class="text-decoration-none"
       ><p :class="{ isActive: $route.name === 'projects' }">

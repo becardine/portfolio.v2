@@ -48,7 +48,7 @@ export default {
       'Fira+Code': [300, 400],
     }
   },
-  
+
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
@@ -84,6 +84,7 @@ export default {
           primaryLight: '#011221',
           accent: '#FEA55F',
           secondary: '#607B96',
+          secondaryLight: '#1C2B3A',
           info: colors.teal.lighten1,
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,

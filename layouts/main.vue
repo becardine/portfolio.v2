@@ -33,8 +33,8 @@ export default {
   height: 16rem,
   border-radius: 50%,
   background: $gradient-2,
-  opacity: 0.4,
-  filter: blur(50px),
+  opacity: 0.05,
+  filter: blur(4rem),
   position: absolute,
   transform: translate(-50%, -50%),
   pointer-events: none

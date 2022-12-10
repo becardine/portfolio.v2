@@ -1,5 +1,5 @@
 <template lang="">
-  <v-footer app color="transparent" elevation="0" class="p-0">
+  <v-footer app color="background" elevation="0" class="p-0">
     <p class="name ml-2">find me in:</p>
     <v-divider class="mx-4" vertical></v-divider>
     <a
@@ -39,4 +39,7 @@ p
 .v-footer
     border-top: 1px solid $lines !important,
     padding: 0,
+
+.v-application .background
+    border: none
 </style>

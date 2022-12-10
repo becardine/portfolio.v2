@@ -4,8 +4,8 @@
 // $font-size-root: 20px;
 
 
-$primary: #01080E; 
-$primary-2: #011627; 
+$primary: #01080E;
+$primary-2: #011627;
 $primary-3: #011221;
 
 $secondary: #607B96;
@@ -44,4 +44,8 @@ i {
 
 .col {
     padding: 0;
+}
+
+.v-application .background {
+    border-color: $lines !important;
 }
